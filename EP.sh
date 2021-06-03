@@ -1,11 +1,15 @@
-isPresent=1
+isFullTime=1
+isPartTime=2
 salaryPerHr=20
 empHr=0
 totalSalary=0
-randomNumber=$((RANDOM%2))
-if [ $randomNumber -eq $isPresent ]
+randomNumber=$((RANDOM%3))
+if [ $randomNumber -eq $isFullTime ]
 then
 empHr=8
+elif [ $randomNumber -eq $isPartTime ]
+then
+empHr=4
 else
 empHr=0
 fi
