@@ -4,6 +4,8 @@ salaryPerHr=20
 empHr=0
 totalSalary=0
 randomnumber=$((RANDOM%3))
+while [[ $Day -le 20 ]];
+do 
 case $randomnumber in
         $isFullTime)
                 echo "Employee is Present"
@@ -18,5 +20,7 @@ case $randomnumber in
                 empHr=0
 		;;
 esac
-totalSalary=$(($salaryPerHr*$empHr))
+totalSalary=$(($totalSalary+($salaryPerHr*$empHr)))
+Day=$((Day+1))
+done
 echo "Salary of Employee is:-" $totalSalary
