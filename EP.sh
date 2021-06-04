@@ -3,15 +3,20 @@ isPartTime=2
 salaryPerHr=20
 empHr=0
 totalSalary=0
-randomNumber=$((RANDOM%3))
-if [ $randomNumber -eq $isFullTime ]
-then
-empHr=8
-elif [ $randomnumber -eq $isFullTime ]
-then
-empHr=4
-else
-empHr=0
-fi
+randomnumber=$((RANDOM%3))
+case $randomnumber in
+        $isFullTime)
+                echo "Employee is Present"
+		empHr=8
+                ;;
+        $isPartTime)
+                echo "Employee is Part Time"
+                 empHr=4
+		;;
+*)
+                echo "Absent"
+                empHr=0
+		;;
+esac
 totalSalary=$(($salaryPerHr*$empHr))
 echo "Salary of Employee is:-" $totalSalary
